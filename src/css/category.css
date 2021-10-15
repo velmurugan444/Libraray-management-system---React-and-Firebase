@@ -1,0 +1,17 @@
+.container{
+    background: ghostwhite;
+    width: 33%;
+    margin-top: 10%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+@media only screen and (max-width: 600px){
+    .container{
+        width: auto;
+    }
+    #browser{
+        width: -webkit-fill-available;
+    }
+}
