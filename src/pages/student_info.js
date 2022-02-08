@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Adminnavbar } from '../components/Navbar/admin_navbar'
 import fire from '../files/firebase';
 
@@ -23,12 +23,12 @@ export const Studentrecord = () => {
     return (
         <div>
             <Adminnavbar />
-            <div className="container" style={{ marginTop: "3%" }}>
+            <div className="container1" style={{ marginTop: "3%" }}>
                 <div className="card">
                     <h4>STUDENT DETAILS</h4>
                     <div class="mb-3">
                         <label className="form-label">Library Id</label>
-                        <input type="text" className="form-control" value={libraryId} onChange={(e) => setlibraryId(e.target.value)} />
+                        <input type="text" className="form-control" placeholder='Enter LibraryId' value={libraryId} onChange={(e) => setlibraryId(e.target.value)} />
                     </div>
                     <br />
                     <button type="button" className="btn btn-primary" onClick={handleSubmit}>Get</button>
@@ -36,7 +36,7 @@ export const Studentrecord = () => {
             </div>
             {
                 studentdata.map((data, index) => {
-                    return <div className="container" style={{ marginTop: "3%" }} key={index}>
+                    return <div className="container1" style={{ marginTop: "3%" }} key={index}>
                         <div className="card">
                             <h4>NAME : {data.name}</h4>
                             <br />

@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Signupscreen } from './auth/student_login';
 import { Adminlogin } from './auth/admin_login';
-import { Adminpage } from './pages/adminpage';
 import { Addstudent } from './pages/add_students';
 import { Addbooks } from './pages/add_books';
 import { Adminprofile } from './pages/admin_profile';
@@ -33,9 +32,6 @@ function App() {
           </Route>
           <Route exact path="/admin">
             <Adminlogin />
-          </Route>
-          <Route exact path="/adminpage">
-            <Adminpage />
           </Route>
           <Route exact path="/addstudent">
             <Addstudent />

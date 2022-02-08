@@ -1,4 +1,3 @@
-import { data } from 'jquery';
 import React, { useState, } from 'react';
 import { Adminnavbar } from '../components/Navbar/admin_navbar';
 import '../css/login.css';
@@ -11,11 +10,14 @@ export const Retrieveissuedbook = () => {
     const [issuedbooks, setissuedbooks] = useState([]);
 
     const handleSubmit = async (e) => {
-        if (startdate === "" || enddate === "" || category === "") {
+        e.preventDefault();
+        if (startdate == "" || enddate == "" || category == "") {
             alert("please fill all fields");
         } else {
+            console.log(startdate, enddate);
             fire.firestore().collection("books-issued").where("currentdate", ">=", startdate).where("currentdate", "<=", enddate).where("category", "==", category).where("status", "==", "pending").get().then((snapshot) => snapshot.forEach((ele) => {
                 var data = ele.data();
+                console.log(data);
                 setissuedbooks(arr => [...arr, data]);
             }))
         }
@@ -25,28 +27,30 @@ export const Retrieveissuedbook = () => {
             var key = ele.id;
             fire.firestore().collection("books-issued").doc(key).update({ status: "received" })
         }))
+        alert("Book Received")
     }
     return (
         <div>
             <Adminnavbar />
-            <div className="container" style={{ marginTop: "3%" }}>
+            <div className="container1" style={{ marginTop: "3%" }}>
                 <h3>RETRIEVE ISSUED BOOKS</h3>
                 <form>
                     <div class="mb-3">
                         <label class="form-label">Start Date</label>
-                        <input type="date" className="form-control" id="exampleInputEmail1" value={startdate} onChange={(e) => setstartdate(e.target.value)} aria-describedby="emailHelp" />
+                        <input type="text" onFocus={(e) => e.target.type = 'date'} placeholder="Pick start date" className="form-control" id="exampleInputEmail1" value={startdate} onChange={(e) => setstartdate(e.target.value)} aria-describedby="emailHelp" />
 
                     </div>
                     <div class="mb-3">
                         <label className="form-label">End Date</label>
-                        <input type="date" class="form-control" id="exampleInputPassword1" value={enddate} onChange={(e) => setenddate(e.target.value)} />
+                        <input type="text" onFocus={(e) => e.target.type = 'date'} placeholder="Pick end date" class="form-control" id="exampleInputPassword1" value={enddate} onChange={(e) => setenddate(e.target.value)} />
                     </div>
                     <br />
                     <div class="mb-3">
                         <label className="form-label">Select Category</label>
                         <select value={category} onChange={(e) => setcategory(e.target.value)} className="form-control">
-                            <option>SELECT CATEGORY</option>
+                            <option disabled={true}>SELECT CATEGORY</option>
                             <option>EDUCATION</option>
+                            <option>CODING</option>
                         </select>
                     </div>
                     <br />
@@ -58,9 +62,9 @@ export const Retrieveissuedbook = () => {
             <div>
                 {issuedbooks != "" ?
                     issuedbooks.map((data, index) => {
-                        return <div className="container" style={{ marginTop: "3%" }} key={index}>
+                        return <div className="container1" style={{ marginTop: "3%" }} key={index}>
                             <div className="card">
-                                <img src={data.bookimage} />
+                                <img src={data.bookimage} style={{ width: "210px", height: "260px" }} />
                                 <br /><br />
                                 <h4>{data.bookname}</h4>
                                 <h4>CATEGORY : {data.category}</h4>
@@ -72,7 +76,7 @@ export const Retrieveissuedbook = () => {
                                 <button type="button" className="btn btn-primary" onClick={() => receiveFunction(data.libraryId)}>Received</button>
                             </div>
                         </div>
-                    }) : <div className="container" style={{ marginTop: "3%" }}><div className="alert alert-danger">No Books Issued</div> </div>
+                    }) : <div className="container1" style={{ marginTop: "3%" }}><div className="alert alert-danger">No Books Issued</div> </div>
                 }
             </div>
 

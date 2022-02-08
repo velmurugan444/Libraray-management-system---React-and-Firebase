@@ -1,0 +1,19 @@
+#navbar{
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 22px;
+    border: none;
+    padding-bottom: 10px;
+    background-color: #d43f3a;
+    border: none;
+    border-radius: 0%;
+}
+#navbar-right{
+    padding-top: 6px;
+}
+#navbar-right > li:hover{
+    background-color: black ;
+}
+#dropdown-menu > li > a:hover{
+    background-color: transparent;
+}

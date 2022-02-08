@@ -1,16 +1,17 @@
-.container{
+.container2{
     background: ghostwhite;
-    width: 33%;
-    margin-top: 10%;
+    width: fit-content;
+    margin-top: 5%;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 40px;
     padding-right: 40px;
     height: auto;
     border-radius: 10px;
-    margin: 9px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.container1{
+.container3{
     background: ghostwhite;
     width: 33%;
     margin-top: 5%;
@@ -23,41 +24,18 @@
     margin-left: auto;
     margin-right: auto;
 }
-.container:hover{
+.container2:hover{
     background-color: bisque;
      box-shadow: 0px 5px 10px -7px rgba(0,0 ,0 ,0.75 );
      transform: scale(1.0);
 }
-.container1:hover{
-    background-color: bisque;
-     box-shadow: 0px 5px 10px -7px rgba(0,0 ,0 ,0.75 );
-     transform: scale(1.0);
-}
-.btn-danger{
-     box-shadow: 0px 5px 10px -7px rgba(0,0 ,0 ,0.75 );
-     transform: scale(1.0);
-}
-.div-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.div-container>.div-style {
-  flex: 1;
-  height: auto;
-}
-
-
 @media only screen and (max-width: 600px){
-    .container{
+    .container2{
         width: auto;
+        margin-top: 10%;
     }
-    .container1{
+    .container3{
         width: auto;
-        margin-top: 20%;
-    }
-    #browser{
-        width: -webkit-fill-available;
+        margin-top: 10%;
     }
 }
