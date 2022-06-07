@@ -1,23 +1,25 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Signupscreen } from './auth/student_login';
-import { Adminlogin } from './auth/admin_login';
-import { Addstudent } from './pages/add_students';
-import { Addbooks } from './pages/add_books';
-import { Adminprofile } from './pages/admin_profile';
-import { Studentpage } from './pages/student_page';
-import { Studentprofile } from './pages/student_profile';
-import { Feedbackpage } from './pages/feedback_page';
-import { Todaybookrequest } from './pages/today_bookrequest';
-import { Issuebook } from './pages/issue_book';
-import { Yourbooks } from './pages/your_books';
-import { Notificationpage } from './pages/notification_page';
-import { Fineupdate } from './pages/fine_update';
-import { Viewfeedback } from './pages/view_feedback';
-import { Retrieveissuedbook } from './pages/retrieve_issuedbook';
-import { Deletebooks } from './pages/delete_books';
-import { Studentrecord } from './pages/student_info';
-import { Retrievefine } from './pages/retrieve_fine';
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Signupscreen } from "./auth/student_login";
+import { Adminlogin } from "./auth/admin_login";
+import { Addstudent } from "./pages/add_students";
+import { Addbooks } from "./pages/add_books";
+import { Adminprofile } from "./pages/admin_profile";
+import { Studentpage } from "./pages/student_page";
+import { Studentprofile } from "./pages/student_profile";
+import { Feedbackpage } from "./pages/feedback_page";
+import { Todaybookrequest } from "./pages/today_bookrequest";
+import { Issuebook } from "./pages/issue_book";
+import { Yourbooks } from "./pages/your_books";
+import { Notificationpage } from "./pages/notification_page";
+import { Fineupdate } from "./pages/fine_update";
+import { Viewfeedback } from "./pages/view_feedback";
+import { Retrieveissuedbook } from "./pages/retrieve_issuedbook";
+import { Deletebooks } from "./pages/delete_books";
+import { Studentrecord } from "./pages/student_info";
+import { Retrievefine } from "./pages/retrieve_fine";
+import Bookstatistics from "./pages/book_statistics";
+import { Paymentscreen } from "./pages/payment_screen";
 
 function App() {
   return (
@@ -81,9 +83,14 @@ function App() {
           <Route exact path="/retrievefine">
             <Retrievefine />
           </Route>
+          <Route exact path="/bookstatistics">
+            <Bookstatistics />
+          </Route>
+          <Route exact path="/paymentscreen">
+            <Paymentscreen />
+          </Route>
         </Switch>
       </Router>
-
     </div>
   );
 }
