@@ -39,7 +39,7 @@ export const Paymentscreen = () => {
     <div>
       <Homenavbar />
       <div className="container1">
-        <h3>PAY FINE</h3>
+        <h3>PAY FINE AMOUNT</h3>
         <form>
           <div className="mb-3">
             <label className="form-label">Enter Amount</label>
